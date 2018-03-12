@@ -1,0 +1,46 @@
+
+<html>
+<head>
+  <style>
+    th, td {
+  padding: 5px;
+}
+</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet"  href="\stylesheets\mystyle.css" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="\controller\emailCtrl.js"></script>
+</head>
+<body background="\images\images.jpg" ng-app="emailApp" ng-controller="emailCtrl">
+<div class="container">
+  <h2> Alert the doctor</h2>
+  <br>
+  <!--<form method="post" action="">-->
+    <div class="form-group">
+            <table >
+                    <tr>
+             <th><label>Reciever Name:</label></th>
+             <th><input type="text" name="Name"  ng-model="email.name" required><br></th>
+             </tr>
+             <tr>
+                  <th><label>Reciever Email:</label></th>
+                  <th><input type="text" name="Email" ng-model="email.email" required></th><br>
+              </tr>
+              <tr>           
+                   <th><label>Message:</label></th>
+                  <th><input type="text" name="Message"  ng-model="email.message" required></th>
+                  S<br>
+              </tr>
+                        
+               </table>
+
+     
+    </div>
+    <button style="background-color: #4CAF50;" margin="auto" class="btn btn-primary btn-xl btn-block" type="submit" ng-click="sendEmail()" >Send Email</button>
+  <!--</form>-->
+</div>
+
+</body> 

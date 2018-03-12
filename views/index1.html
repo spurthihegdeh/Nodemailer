@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    th, td {
+  padding: 5px;
+    }
+  table {
+    font-family: arial, sans-serif;
+    border-collapse : collapse;
+    width: 100%;
+  }
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet"  href="\stylesheets\mystyle.css" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="\controller\customerCtrl.js"></script>
+ 
+</head>
+<body background="\images\images.jpg" ng-app="customerApp" ng-controller="customerCtrl">
+
+<table>
+  <tr ng-repeat="customers in customers">
+    <td>{{customers.name }}</td>
+    <td>{{customers.place }}</td>
+    <td>{{customers.component }}</td>
+    <td>{{customers.latitude }}</td>
+    <td>{{customers.longitude }}</td>
+
+
+  </tr>
+</table>
+</div>
+
+
+</body>
+
+</html>
