@@ -71,7 +71,7 @@ router.get('/', function(req,res){
             port: 25,
             auth: { 
             user: 'serveonalert@gmail.com',
-            pass: 'testpassword'
+            pass: '****************'
             },
             tls: {
             rejectUnauthorized: false
