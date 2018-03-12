@@ -1,67 +1,9 @@
 var express = require('express');
 var router = express.Router();
-var customerVar = require('../model/customerModel.js'); //customerVar is connected to customerModel.js
+
 var assert = require('assert');
 var nodemailer = require('nodemailer');
 
-/*var smtpTransport = nodemailer.createTransport({
-    service: "gmail",
-    host: "smtp.gmail.com",
-  //  auth: {
-   //     user: "",
-      //  pass: ""
-   // }
-});*/
-
-
-
-router.get('/', function(req,res){
-    customerVar.find({}, function(err,customer){ //customer is a variable that is connected to schema
-    if (err)
-    {
-    res.send('something is really wrong!!');
-    next();
-    }
-      
-    res.json(customer);
-    
-    });
-    });  
-
-    router.get('/get', function (req, res) {
-        console.log('I received a GET request');
-        customerVar.find({}, function(err, customers) {
-            if(!err){
-               res.send(customers);
-              //res.sendFile('index1.html');
-              //res.sendFile(__dirname + '/index.html');
-              //res.render('index1.html');
-            }
-            else{
-                res.send('could not retrived data');
-            }
-    
-        });
-    
-    });
-
-    /* router.post('/send-email', function(req,res){
-        var mailOptions={
-            name : "Spurthi",
-            email : "spurthi.hegde@gmail.com",
-            message : "hi"
-        }
-        console.log(mailOptions);
-        smtpTransport.sendMail(mailOptions, function(error, response){
-         if(error){
-                console.log(error);
-            res.send("error");
-         }else{
-                console.log("Message sent: " + response.message);
-            res.send("sent");
-             }
-    });
-    }); */
 
     router.post('/send-email', function(req,res){
        
